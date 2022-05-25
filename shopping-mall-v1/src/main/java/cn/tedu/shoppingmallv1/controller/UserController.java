@@ -10,6 +10,7 @@ public class UserController {
     @Autowired(required = false)
     UserMapper mapper;
 
+    //白胡子工作室
     @RequestMapping("/login")
     public int login(@RequestBody User user){
         User u = mapper.selectByName(user.getUsername());
