@@ -14,7 +14,7 @@ public class UserController {
     UserMapper mapper;
 
     //修改测试 merge冲突测试
-
+    //白胡子工作室
     // 同时操作一个类时， 出现两人同时提交代码时的合并冲突。
     @RequestMapping("/login")
     public int login(@RequestBody User user){
