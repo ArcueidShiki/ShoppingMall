@@ -9,4 +9,5 @@
 - 规范提交信息格式为 : XXX成员 - 完成了哪些(文件)的功能/做了哪些(文件)的改动 
 - 来取下来代码后。首先查看每个readme,spring刷新maven 加载依赖 ，mall是一个 vue-cli (查看readme) npm install 
 - database 文件夹里是 mall.sql 数据库文件
+- 
 
