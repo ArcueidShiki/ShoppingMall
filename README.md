@@ -10,4 +10,5 @@
 - 来取下来代码后。首先查看每个readme,spring刷新maven 加载依赖 ，mall是一个 vue-cli (查看readme) npm install 
 - database 文件夹里是 mall.sql 数据库文件
 - 
+-
 
