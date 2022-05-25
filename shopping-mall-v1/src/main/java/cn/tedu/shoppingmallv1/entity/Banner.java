@@ -2,13 +2,13 @@ package cn.tedu.shoppingmallv1.entity;
 
 public class Banner {
     private Integer id;
-    private String bannerUrl;
+    private String banner; // 轮播图文件名称
 
     @Override
     public String toString() {
         return "Banner{" +
                 "id=" + id +
-                ", bannerUrl='" + bannerUrl + '\'' +
+                ", banner='" + banner + '\'' +
                 '}';
     }
 
@@ -20,11 +20,11 @@ public class Banner {
         this.id = id;
     }
 
-    public String getBannerUrl() {
-        return bannerUrl;
+    public String getBanner() {
+        return banner;
     }
 
-    public void setBannerUrl(String bannerUrl) {
-        this.bannerUrl = bannerUrl;
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 }

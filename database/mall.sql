@@ -89,6 +89,10 @@ select * from category;
 select * from brand;
 select * from product;
 select * from product_imgs;
-
+alter table user change avatar_url avatar varchar(255);
 alter table user change birth birth date;
-select * from banner;
+alter table banner change banner_url banner varchar(255);
+alter table product change cover_url cover varchar(255);
+select * from product_imgs;
+alter table product_imgs change img_url img varchar(255);
+desc user;

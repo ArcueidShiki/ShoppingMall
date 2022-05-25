@@ -10,7 +10,7 @@ public class User {
     private String tel;
     private String email;
     private String paymentPassword;
-    private String avatarUrl;
+    private String avatar; //存图片文件名。后端返回的也是文件名
     private Date birth;
     private String city;
 
@@ -24,7 +24,7 @@ public class User {
                 ", tel='" + tel + '\'' +
                 ", email='" + email + '\'' +
                 ", paymentPassword='" + paymentPassword + '\'' +
-                ", avatarUrl='" + avatarUrl + '\'' +
+                ", avatar='" + avatar + '\'' +
                 ", birth=" + birth +
                 ", city='" + city + '\'' +
                 '}';
@@ -86,12 +86,12 @@ public class User {
         this.paymentPassword = paymentPassword;
     }
 
-    public String getAvatarUrl() {
-        return avatarUrl;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public Date getBirth() {

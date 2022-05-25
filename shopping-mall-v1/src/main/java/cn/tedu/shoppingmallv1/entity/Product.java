@@ -1,5 +1,7 @@
 package cn.tedu.shoppingmallv1.entity;
 
+import java.util.List;
+
 public class Product {
     private Integer id;
     private String title;
@@ -7,13 +9,14 @@ public class Product {
     private String category;
     private String brand;
     private String type;
-    private String coverUrl; //封面图地址
+    private String cover; //封面图文件名
     private Double price;
     private Double oldPrice;
     private Integer stock; //库存
     private Integer saleCount;
     private Integer commentCount; //评论数
     private Double score; //评分
+    private List<String> imgs; //商品详情图组
 
     @Override
     public String toString() {
@@ -24,13 +27,14 @@ public class Product {
                 ", category='" + category + '\'' +
                 ", brand='" + brand + '\'' +
                 ", type='" + type + '\'' +
-                ", coverUrl='" + coverUrl + '\'' +
+                ", cover='" + cover + '\'' +
                 ", price=" + price +
                 ", oldPrice=" + oldPrice +
                 ", stock=" + stock +
                 ", saleCount=" + saleCount +
                 ", commentCount=" + commentCount +
                 ", score=" + score +
+                ", imgs=" + imgs +
                 '}';
     }
 
@@ -82,12 +86,12 @@ public class Product {
         this.type = type;
     }
 
-    public String getCoverUrl() {
-        return coverUrl;
+    public String getCover() {
+        return cover;
     }
 
-    public void setCoverUrl(String coverUrl) {
-        this.coverUrl = coverUrl;
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
     public Double getPrice() {
@@ -136,5 +140,13 @@ public class Product {
 
     public void setScore(Double score) {
         this.score = score;
+    }
+
+    public List<String> getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(List<String> imgs) {
+        this.imgs = imgs;
     }
 }
