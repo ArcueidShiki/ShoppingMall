@@ -8,4 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class BannerController {
     @Autowired(required = false)
     BannerMapper mapper;
+
+    //pjl 开始 coding
 }
