@@ -21,6 +21,7 @@ public class UploadController {
      * /upload/comment/imgs
      * /upload/product/imgs
      * /upload/product/cover
+     * /upload/banner
      */
     private String getSaveName(MultipartFile picFile){
         String originName = picFile.getOriginalFilename();
@@ -107,12 +108,33 @@ public class UploadController {
         new File(savePath).delete();
     }
 
+    @RequestMapping("/upload/banner")
+    public String uploadBanner(MultipartFile banner) throws IOException{
+        File saveDir = new File(saveRoot+"/banner");
+        if(!saveDir.exists()){
+            saveDir.mkdirs();
+        }
+        // 保存到 mall/public/avatar;
+        banner.transferTo(saveDir);
+        // 返回这个 hash文件名 给前端显示
+        String saveName = getSaveName(banner);
+        return saveName;
+    }
+
+    @RequestMapping("/delete/banner")
+    public void deleteBanner(String name){
+        String savePath = saveRoot+"/banner/"+name;
+        new File(savePath).delete();
+    }
+
     // 以下是修改方法是在UserController和ProductController中进行===========================================================================
     /**
      * /upload/avatar/update
      * /upload/product/cover/update
      * /upload/product/imgs/update
-     * "修改头像逻辑流程 :
+     * /upload/comment/imgs/update
+     * /upload/banner/update
+     * 修改图片逻辑流程 :
      * 1.展示原头像: 前端根据用户id，GET请求用户头像数据(图片hash名)-img标签根据图片名找到图片地址展示
      * 2.上传新图片时，uploadController保存新图片并返回前端新hash名，并在前端展示。此时前端user变量里的avatar的值是新hash名，oldAvatar值存就头像的hash名。
      * 3.前端点击保存时，post请求UserController的upload的路径，对数据库中进行保存修改，通过把oldAvatar发送给UploadController。在磁盘中删除旧图片。
