@@ -33,14 +33,15 @@ public class UploadController {
 
     @RequestMapping("/upload/avatar")
     public String uploadAvatar(MultipartFile avatar) throws IOException{
+        System.out.println("avatar = " + avatar);
+        // 保存到 mall/public/avatar;
         File saveDir = new File(saveRoot,"avatar");
         if(!saveDir.exists()){
             saveDir.mkdirs();
         }
-        // 保存到 mall/public/avatar;
-        avatar.transferTo(saveDir);
         // 返回这个 hash文件名 给前端显示
         String saveName = getSaveName(avatar);
+        avatar.transferTo(new File(saveDir+"/"+saveName));
         return saveName;
     }
 
@@ -57,10 +58,8 @@ public class UploadController {
         if(!saveDir.exists()){
             saveDir.mkdirs();
         }
-        // 保存到 mall/public/avatar;
-        cover.transferTo(saveDir);
-        // 返回这个 hash文件名 给前端显示
         String saveName = getSaveName(cover);
+        cover.transferTo(new File(saveDir+"/"+saveName));
         return saveName;
     }
 
@@ -76,10 +75,8 @@ public class UploadController {
         if(!saveDir.exists()){
             saveDir.mkdirs();
         }
-        // 保存到 mall/public/avatar;
-        productImg.transferTo(saveDir);
-        // 返回这个 hash文件名 给前端显示
         String saveName = getSaveName(productImg);
+        productImg.transferTo(new File(saveDir+"/"+saveName));
         return saveName;
     }
 
@@ -95,14 +92,12 @@ public class UploadController {
         if(!saveDir.exists()){
             saveDir.mkdirs();
         }
-        // 保存到 mall/public/avatar;
-        commentImg.transferTo(saveDir);
-        // 返回这个 hash文件名 给前端显示
         String saveName = getSaveName(commentImg);
+        commentImg.transferTo(new File(saveDir+"/"+saveName));
         return saveName;
     }
 
-    @RequestMapping("/delete/product/imgs")
+    @RequestMapping("/delete/comment/imgs")
     public void deleteCommentImg(String name){
         String savePath = saveRoot+"/comment/imgs/"+name;
         new File(savePath).delete();
@@ -114,10 +109,8 @@ public class UploadController {
         if(!saveDir.exists()){
             saveDir.mkdirs();
         }
-        // 保存到 mall/public/avatar;
-        banner.transferTo(saveDir);
-        // 返回这个 hash文件名 给前端显示
         String saveName = getSaveName(banner);
+        banner.transferTo(new File(saveDir+"/"+saveName));
         return saveName;
     }
 
