@@ -18,7 +18,7 @@ public class ShopCartController {
         return mapper.select();
     }
 
-    @RequestMapping("/user/shopCart/insert")
+    @RequestMapping("/user/shopCart/add")
     public String insert(){
         return mapper.insert();
     }
@@ -26,5 +26,10 @@ public class ShopCartController {
     @RequestMapping("/user/shopCart/update")
     public String update(){
         return mapper.update();
+    }
+
+    @RequestMapping("/user/shopCart/delete")
+    public String deleteById(){
+        return mapper.delete();
     }
 }

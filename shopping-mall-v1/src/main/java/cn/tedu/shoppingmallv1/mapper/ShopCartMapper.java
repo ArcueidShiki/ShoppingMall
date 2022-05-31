@@ -1,10 +1,7 @@
 package cn.tedu.shoppingmallv1.mapper;
 
 import cn.tedu.shoppingmallv1.entity.Product;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -17,7 +14,9 @@ public interface ShopCartMapper {
     @Insert("insert into shopCart values(#{pid},#{buyCount})")
     String insert();
 
-
-    @Update("update ")
+    @Update("update shop_cart set pid where pid=#{pid}")
     String update();
+
+    @Delete("delete from shop_Cart where id=#{pid}")
+    String delete();
 }
