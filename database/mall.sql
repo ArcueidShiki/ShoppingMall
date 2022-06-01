@@ -1,13 +1,8 @@
-
-
-
-create database mall;
-show databases ;
 use mall;
 show tables ;
 
 DROP TABLE IF EXISTS `user`;
-## user表 : 用户表  mb3 代表不支持输入特殊符号。相比于可以支持特殊符号的mb4 节省空间。用户名等信息不建议带有表情等特殊符号
+## user表 : 用户表
 create table user(
     id int primary key auto_increment,
     username varchar(20),
@@ -18,7 +13,8 @@ create table user(
     payment_password varchar(6),
     avatar varchar(255),
     birth date,
-    city varchar(20))charset=utf8mb3;
+    city varchar(20)
+)charset=utf8mb4;
     
 DROP TABLE IF EXISTS `delivery`;
 ## delivery表 : 用户的收货地址表
@@ -27,7 +23,7 @@ create table delivery (
     uid int,
     receiver varchar(20),
     tel varchar(20),
-    address varchar(255))charset=utf8mb3;
+    address varchar(255))charset=utf8mb4;
 
 DROP TABLE IF EXISTS `shop_cart`;
 ## shop_cart表 :购物车 表
@@ -36,56 +32,7 @@ create table shop_cart(
     uid int,
     pid int,
     buy_count int
-)charset=utf8mb3;
-
-DROP TABLE IF EXISTS `banner`;
-## banner 轮播图表
-create table banner(
-    id int primary key auto_increment,
-    banner varchar(255)
-)charset=utf8mb3;
-
-DROP TABLE IF EXISTS `banner`;
-## category 商品种类表
-create table category(
-    id int primary key auto_increment,
-    category varchar(20),
-    sale_count int
-)charset=utf8mb3;
-
-DROP TABLE IF EXISTS `brand`;
-## brand 商品品牌表
-create table brand(
-    id int primary key auto_increment,
-    brand varchar(20),
-    sale_count int
-)charset=utf8mb3;
-
-DROP TABLE IF EXISTS `product_imgs`;
-## product_imgs 商品详情页图片表
-create table product_imgs(
-    pid int primary key auto_increment,
-    img varchar(255)
-)charset=utf8mb3;
-
-DROP TABLE IF EXISTS `product`;
-## product 商品表
-create table product(
-    id int primary key auto_increment,
-    title varchar(50),
-    description varchar(100),
-    category varchar(20),
-    brand varchar(20),
-    type varchar(20),
-    cover varchar(255),
-    price Double(9,2),
-    old_price Double(9,2),
-    stock int,
-    sale_count int,
-    comment_count int,
-    score Double(2,2)
-)charset=utf8mb3;
-
+)charset=utf8mb4;
 
 DROP TABLE IF EXISTS `orders`;
 ## order 订单表
@@ -98,16 +45,12 @@ create table orders(
     status int,
     created timestamp,
     ended timestamp
-)charset=utf8mb3;
+)charset=utf8mb4;
 
 select * from user;
+select * from delivery;
 select * from shop_cart;
 select * from orders;
-
-select * from category;
-select * from brand;
-select * from product;
-select * from product_imgs;
 desc user;
 
 ## 添加一些伪数据
