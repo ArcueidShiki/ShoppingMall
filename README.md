@@ -1,5 +1,7 @@
 # ShoppingMall
 ---
+## 注意 commit 到本地后，在push到远程仓库前！必须先pull拉取代码与别人保持同步。否则你的push可能会覆盖别人的代码
+## 如果 你pull 下来的代码与别人产生冲突 选择merge 手动解决冲突。如果你不清楚如何解决冲突请向组长请求帮助
 - 统一创建项目工程文件，无需再单独创建直接 pull 拉取。。
 - application.properties不要做修改。后序统一配置数据库JDBC和dirPath 和 xml的spring bean配置
 - 提交代码前一定先测试功能，能正常运行 不报错了再提交 
