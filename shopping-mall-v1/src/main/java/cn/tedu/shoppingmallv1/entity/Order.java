@@ -1,16 +1,18 @@
 package cn.tedu.shoppingmallv1.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private Integer id;  // 订单id
     private Integer uid; //用户id
     private Integer pid; //商品id
     private Integer did; // 配送信息id
-    private Integer butCount; //单件商品数量
+    private Integer buyCount; //单件商品数量
     private Integer status; // 订单状态，后序补充详细解释
     private Date created; //创建日期
-    private Date ended; // 交易结束日期
+    private Date ended;// 交易结束日期
+    private List<Product> products;
 
     @Override
     public String toString() {
@@ -19,10 +21,11 @@ public class Order {
                 ", uid=" + uid +
                 ", pid=" + pid +
                 ", did=" + did +
-                ", butCount=" + butCount +
+                ", buyCount=" + buyCount +
                 ", status=" + status +
                 ", created=" + created +
                 ", ended=" + ended +
+                ", products=" + products +
                 '}';
     }
 
@@ -58,12 +61,12 @@ public class Order {
         this.did = did;
     }
 
-    public Integer getButCount() {
-        return butCount;
+    public Integer getBuyCount() {
+        return buyCount;
     }
 
-    public void setButCount(Integer butCount) {
-        this.butCount = butCount;
+    public void setBuyCount(Integer buyCount) {
+        this.buyCount = buyCount;
     }
 
     public Integer getStatus() {
@@ -88,5 +91,13 @@ public class Order {
 
     public void setEnded(Date ended) {
         this.ended = ended;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
